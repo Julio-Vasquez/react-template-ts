@@ -1,19 +1,16 @@
-import React, { StrictMode, lazy, Suspense } from "react";
+import React, { StrictMode } from "react";
 import ReactDOM from "react-dom";
 import "react-app-polyfill/ie11";
 import "react-app-polyfill/stable";
 
-import "./index.scss";
-import reportWebVitals from './reportWebVitals';
-import { Loading } from "./components/Loading/Loading";
+import "./sass/main.scss";
+import App from "./views/App";
 
-const App = lazy(() => import("./views/App"));
+import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <StrictMode>
-    <Suspense fallback={<Loading message="Loading" />}>
-      <App />
-    </Suspense>
+    <App />
   </StrictMode>,
   document.getElementById("root")
 );

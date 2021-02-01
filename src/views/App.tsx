@@ -1,9 +1,14 @@
-import React from "react";
+import React from "react"
 
-const App = () =>{
+import { Private } from "./Private"
+import { Public } from "./Public"
+
+const App = () => {
+  const auth: boolean = false;
+
   return (
     <div className="App">
-      App 
+      { auth? <Private /> : <Public /> } 
     </div>
   );
 }
