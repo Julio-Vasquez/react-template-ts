@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from 'react'
-import { Router } from '@reach/router'
+import { Redirect, Router } from '@reach/router'
 
 import { Loading } from './../../components/Loading';
 
@@ -10,7 +10,8 @@ export const Public = () => {
     <Suspense fallback={ <Loading message="Loading ..." /> }>
       <Router>
         <Login path="/" />
-        <Login path="/login" />
+        <Login path="/auth" />
+        <Redirect from="*" to="/" noThrow/>
       </Router>
     </Suspense>
   )
