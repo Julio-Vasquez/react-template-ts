@@ -7,12 +7,9 @@ import rootSaga from './Sagas';
 
 const sagaMiddleware = createSagaMiddleware();
 
-let middleware;
+let middleware: any = [sagaMiddleware];
 
-if (true === true)
-  middleware = [sagaMiddleware, logger];
-else
-  middleware = [sagaMiddleware];
+if (true === true) middleware = [sagaMiddleware, logger];
 
 const Store = configureStore({
   reducer: appReducer,

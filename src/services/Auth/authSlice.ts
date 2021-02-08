@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 //definir type para el estado inicial
-type State = {
+interface IState {
   authentication: boolean,
   error: boolean,
   success: boolean,
@@ -10,7 +10,7 @@ type State = {
   username: string
 }
 //stado inicial
-export let initialState: State = {
+export const initialState: IState = {
   authentication: false,
   error: false,
   success: true,
@@ -35,7 +35,7 @@ const AuthSlice = createSlice({
       state.error = false
       state.success = false
       state.message = 'Cargando'
-      state.username = username
+      state.username = username.toUpperCase()
     },
 
     loginSuccess(state, action: PayloadAction<string>) {
