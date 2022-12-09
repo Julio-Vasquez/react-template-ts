@@ -1,0 +1,1 @@
+export {Register, default} from "./Register"

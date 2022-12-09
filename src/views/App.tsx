@@ -1,16 +1,22 @@
-import React from "react"
+import { FC } from 'react'
+import { Provider } from 'react-redux'
+import { I18nextProvider } from 'react-i18next'
 
-import { Private } from "./Private"
-import { Public } from "./Public"
+import { useIntl } from './../hooks/useIntl'
 
-const App = () => {
-  const auth: boolean = false;
+import store from '../store'
+import i18n from '../i18n/config'
 
-  return (
-    <div className="App">
-      { auth? <Private /> : <Public /> } 
-    </div>
-  );
+const App: FC = () => {
+    const { formatMessage } = useIntl()
+
+    return (
+        <Provider store={store}>
+            <I18nextProvider i18n={i18n}>
+                <p>{formatMessage({ id: 'button.login' })}</p>
+            </I18nextProvider>
+        </Provider>
+    )
 }
 
 export default App;

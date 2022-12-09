@@ -1,15 +1,22 @@
-import { combineReducers, AnyAction } from "@reduxjs/toolkit";
+import { combineReducers, AnyAction } from '@reduxjs/toolkit'
 
-import authReducer from './../services/Auth/authSlice';
+import { AUTH } from '../utils/constants/redux.constants'
 
-export const appReducer = combineReducers({
-  Auth: authReducer
-});
+import authReducer, {
+    initialState as initialStateAuth,
+} from '../services/Auth/auth.slice'
+
+const appReducer = combineReducers({
+    [AUTH]: authReducer,
+})
 
 const rootReducer = (state: any, action: AnyAction) => {
-  if (action.type === "auth/logout") state = undefined
-  return appReducer(state, action);
-};
+    if (action.type === 'auth/logout')
+        state = {
+            [AUTH]: initialStateAuth,
+        }
+    return appReducer(state, action)
+}
 
 export type RootState = ReturnType<typeof appReducer>
 
