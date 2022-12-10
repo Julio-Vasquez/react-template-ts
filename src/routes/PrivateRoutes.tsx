@@ -2,7 +2,7 @@ import { lazy, Suspense } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
 import { Loading } from './../components/Loading'
-import { PrivateLayout } from './../Layouts/PrivateLayout'
+import { PrivateLayout } from '../layouts/PrivateLayout'
 
 const Home = lazy(() => import('./../Views/Private/Home'))
 const Error404 = lazy(() => import('./../components/Error/Error404'))
