@@ -1,3 +1,5 @@
 export const Text = {
-    loading: 'Cargando...',
+    loading: 'Cargando',
+    noData: 'Sin Datos',
+    forgotPassword: 'Olvide mi contraseña',
 }

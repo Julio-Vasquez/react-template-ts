@@ -45,12 +45,9 @@ const getSelectSearch = () => {
         }
     }
 
-    return {
-        showSearch: true,
-        filterOption,
-        optionFilterProp,
-    }
+    return { showSearch: true, filterOption, optionFilterProp }
 }
+
 const inputToUpperCase = () => ({
     normalize: (value: string) => (value || '').toUpperCase(),
 })

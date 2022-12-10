@@ -1,13 +1,30 @@
+import { FC } from 'react'
+import { Link } from 'react-router-dom'
+
+import {
+    ErrorTokenDefaultProps,
+    ErrorTokenPropTypes,
+    ErrorTokenProps,
+} from './error.types'
+
 import './ErrorToken.scss'
 
-export const ErrorToken = () => (
-  <div id='notFound'>
-    <div className='notFound'>
-      <div className='notFound-404'>
-        <h1>404</h1>
-        <h2>Solicitud Invalida</h2>
-      </div>
-      <a href='/'>Inicio</a>
+export const ErrorToken: FC<ErrorTokenProps> = ({
+    title,
+    errorNumber,
+    redirect,
+    text,
+}) => (
+    <div id='notFound'>
+        <div className='notFound'>
+            <div className='notFound-404'>
+                <h1>{errorNumber}</h1>
+                <h2>{title}</h2>
+            </div>
+            <Link to={redirect}>{text}</Link>
+        </div>
     </div>
-  </div>
 )
+
+ErrorToken.propTypes = ErrorTokenPropTypes
+ErrorToken.defaultProps = ErrorTokenDefaultProps

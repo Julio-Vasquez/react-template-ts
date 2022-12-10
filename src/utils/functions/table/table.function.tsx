@@ -5,9 +5,11 @@ import { FilterDropdownProps, Key } from 'antd/lib/table/interface'
 
 import { DeleteOutlined, SearchOutlined } from '@ant-design/icons'
 
+import useIntl from '../../../hooks/useIntl'
 import { props, tableConfig, filter, params } from './table.types'
 
 const useColumnSearch = ({ dataIndex, title }: props) => {
+    const { formatMessage } = useIntl()
     const inputRef = useRef<InputRef>(null)
     const [searchText, setSearchText] = useState<any>('')
 
@@ -47,20 +49,24 @@ const useColumnSearch = ({ dataIndex, title }: props) => {
                     style={{ width: 90, marginRight: 8 }}
                 >
                     <SearchOutlined />
-                    Search
+                    {formatMessage({ id: 'button.search' })}
                 </Button>
                 <Button
-                    onClick={() => clearFilters && handleReset(clearFilters, confirm)}
+                    onClick={() =>
+                        clearFilters && handleReset(clearFilters, confirm)
+                    }
                     size='small'
                     style={{ width: 90 }}
                 >
                     <DeleteOutlined />
-                    Clean
+                    {formatMessage({ id: 'button.clean' })}
                 </Button>
             </div>
         ),
         filterIcon: (filtered: boolean) => (
-            <SearchOutlined style={{ color: filtered ? 'var(--primary)' : undefined }} />
+            <SearchOutlined
+                style={{ color: filtered ? 'var(--primary)' : undefined }}
+            />
         ),
         onFilter: (value: string, record: string[]): boolean =>
             record[dataIndex]
@@ -81,7 +87,11 @@ const useColumnSearch = ({ dataIndex, title }: props) => {
     }
 }
 
-const getTableConfig = ({ recordKey, scrollX = 'max-content', pagSize }: tableConfig) => {
+const getTableConfig = ({
+    recordKey,
+    scrollX = 'max-content',
+    pagSize,
+}: tableConfig) => {
     let rowKey = (record: any) => record?._id
     const pagination = pagSize
         ? { pagination: { pageSize: pagSize } }

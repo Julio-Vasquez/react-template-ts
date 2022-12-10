@@ -1,4 +1,8 @@
-export const RESPONSE_API = {
+type body = {
+    [key: number]: string
+}
+
+export const RESPONSE_API: body = {
     400: 'No se pudo interpretar la solicitud dada',
     401: 'No Autorizado',
     404: 'El servidor no pudo encontrar el contenido solicitado',

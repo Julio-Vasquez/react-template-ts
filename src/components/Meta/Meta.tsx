@@ -1,5 +1,6 @@
+import { FC } from 'react'
+import propTypes from 'prop-types'
 import { Helmet } from 'react-helmet-async'
-import PropTypes from 'prop-types'
 
 type MetaProps = {
     title: string
@@ -7,7 +8,7 @@ type MetaProps = {
     keywords: Array<string>
 }
 
-const Meta = ({ title, description, keywords }: MetaProps) => {
+const Meta: FC<MetaProps> = ({ title, description, keywords }) => {
     return (
         <Helmet>
             <title>{title}</title>
@@ -18,9 +19,9 @@ const Meta = ({ title, description, keywords }: MetaProps) => {
 }
 
 Meta.propTypes = {
-    title: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    keywords: PropTypes.arrayOf(PropTypes.string).isRequired,
+    title: propTypes.string.isRequired,
+    description: propTypes.string.isRequired,
+    keywords: propTypes.arrayOf(propTypes.string.isRequired).isRequired,
 }
 
 export default Meta

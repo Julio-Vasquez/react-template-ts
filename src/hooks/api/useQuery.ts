@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+
 import { errorNotification } from '../../utils/notifications/notification.action'
 
 import { state, queryType, func } from './api.types'

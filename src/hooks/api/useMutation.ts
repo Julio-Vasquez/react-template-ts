@@ -1,4 +1,5 @@
 import { useState } from 'react'
+
 import { errorNotification } from '../../utils/notifications/notification.action'
 
 import { mutationType, state, func } from './api.types'

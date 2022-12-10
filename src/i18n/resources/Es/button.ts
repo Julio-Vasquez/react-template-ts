@@ -9,4 +9,6 @@ export const Button = {
     email: 'Correo electronico',
     confirmPassword: 'Confirmar contraseña',
     addObj: 'Agregar a {{name}}',
+    search: 'Buscar',
+    clean: 'Limpiar',
 }

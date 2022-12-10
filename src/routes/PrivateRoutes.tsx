@@ -14,20 +14,20 @@ export const PrivateRoutes = () => {
 
     return (
         <PrivateLayout>
-            <BrowserRouter>
-                <Suspense
-                    fallback={
-                        <Loading message={formatMessage({ id: 'text.loading' })} />
-                    }
-                >
+            <Suspense
+                fallback={
+                    <Loading message={formatMessage({ id: 'text.loading' })} />
+                }
+            >
+                <BrowserRouter>
                     <Routes>
                         <Route path='/' element={<Home />} />
                         <Route path='/home' element={<Home />} />
                         <Route path='/404' element={<Error404 />} />
                         <Route path='*' element={<Navigate replace to='/404' />} />
                     </Routes>
-                </Suspense>
-            </BrowserRouter>
+                </BrowserRouter>
+            </Suspense>
         </PrivateLayout>
     )
 }

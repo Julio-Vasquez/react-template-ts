@@ -6,6 +6,7 @@
     "react",
     "typescript"
   ],
+  "license": "MIT",
   "repository": "https://github.com/Julio-Vasquez/react-template-ts.git",
   "homepage": "https://github.com/Julio-Vasquez/react-template-ts",
   "author": "Julio Vásquez <jualvalitube@gmail.com>",
