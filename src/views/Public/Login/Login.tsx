@@ -1,11 +1,14 @@
 import { FC } from 'react'
 import { Link } from 'react-router-dom'
 import { Button, Form, Input } from 'antd'
+
+import { useIntl } from './../../../hooks/useIntl'
 import { LoginDefaultProps, LoginProps, LoginPropTypes } from './login.types'
 
 const { Item, useForm } = Form
 
-export const Login: FC<LoginProps> = ({ description }) => {
+export const Login: FC<LoginProps> = () => {
+    const { formatMessage } = useIntl()
     const [form] = useForm()
 
     const onFinish = (values: any) => {
@@ -27,7 +30,7 @@ export const Login: FC<LoginProps> = ({ description }) => {
             autoComplete='off'
             form={form}
         >
-            <h1>Login</h1>
+            <h1>{formatMessage({ id: 'button.login' })}</h1>
 
             <Item
                 label='Username'
@@ -52,12 +55,12 @@ export const Login: FC<LoginProps> = ({ description }) => {
                 valuePropName='checked'
                 wrapperCol={{ offset: 11, span: 5 }}
             >
-                <Link to='/'>Forgot password </Link>
+                <Link to='/'>{formatMessage({ id: 'text.forgotPassword' })}</Link>
             </Item>
 
             <Item wrapperCol={{ offset: 12, span: 12 }}>
                 <Button type='primary' htmlType='submit'>
-                    Submit
+                    {formatMessage({ id: 'button.login' })}
                 </Button>
             </Item>
         </Form>
