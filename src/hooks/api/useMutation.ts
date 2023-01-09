@@ -29,5 +29,5 @@ export const useMutation = <T>(
         }
     }
 
-    return { execFunction, ...req }
+    return [execFunction, { ...req }]
 }
