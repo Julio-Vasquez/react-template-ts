@@ -11,6 +11,7 @@
   "homepage": "https://github.com/Julio-Vasquez/react-template-ts",
   "author": "Julio Vásquez <jualvalitube@gmail.com>",
   "scripts": {
+    "start": "npx http-server ./dist",
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
