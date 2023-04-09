@@ -2,8 +2,8 @@ import { query } from '../../api/core/api.types'
 import { URL_API } from '../constants/environment.constant'
 import { RESPONSE_API } from '../constants/response.constant'
 
-export const getHeader = (token: string | null) => {
-    const exists = token !== null && { Authorization: `Bearer ${token}` }
+export const getHeader = (token?: string | null) => {
+    const exists = token && { Authorization: `Bearer ${token}` }
     return {
         headers: {
             Accept: 'application/json',

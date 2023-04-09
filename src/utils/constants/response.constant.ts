@@ -8,3 +8,5 @@ export const RESPONSE_API: body = {
     404: 'El servidor no pudo encontrar el contenido solicitado',
     500: 'Ocurrio un error en el servicdor',
 }
+
+export const Unauthorized = 401

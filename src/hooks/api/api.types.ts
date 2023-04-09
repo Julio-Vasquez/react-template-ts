@@ -16,3 +16,9 @@ export type queryType<T> = Omit<mutationType, 'onCompleted'> & {
 }
 
 export type func = { functionFetch: Function }
+
+export enum FetchCase {
+    loading = 'loading',
+    fetched = 'fetched',
+    error = 'error',
+}
