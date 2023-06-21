@@ -1,24 +1,25 @@
 import { Tag } from 'antd'
+import { type FC } from 'react'
 
 import { useIntl } from './../../../hooks/useIntl'
 import { STATUS } from '../../../utils/constants/status.constant'
 
 import {
-    StatusTagPropTypes,
-    StatusTagProps,
-    DefaultStatusTagPropTypes,
-} from './status.type'
+  StatusTagPropTypes,
+  type StatusTagProps,
+  DefaultStatusTagPropTypes
+} from './status'
 
-const StatusTag = ({ status }: StatusTagProps) => {
-    const { formatMessage } = useIntl()
+const StatusTag: FC<StatusTagProps> = ({ status }) => {
+  const { formatMessage } = useIntl()
 
-    const statusValue = STATUS.find(ele => ele.text === status)
+  const statusValue = STATUS.find(ele => ele.text === status)
 
-    return !!statusValue ? (
-        <Tag color={statusValue.color}>{statusValue.text}</Tag>
-    ) : (
-        <Tag color='red'>{formatMessage({ id: 'text.noData' })}</Tag>
-    )
+  if (statusValue == null) {
+    return <Tag color='red'>{formatMessage({ id: 'text.noData' })}</Tag>
+  }
+
+  return <Tag color={statusValue?.color}>{statusValue?.text}</Tag>
 }
 
 StatusTag.defaultProps = DefaultStatusTagPropTypes

@@ -5,10 +5,10 @@ import type { InlineConfig } from 'vitest'
 import pluginRewriteAll from 'vite-plugin-rewrite-all'
 
 interface VitestConfigExport extends UserConfig {
-    test: InlineConfig
+  test: InlineConfig
 }
 
 export default defineConfig({
-    plugins: [react(), pluginRewriteAll()],
-    test: { environment: 'happy-dom' },
+  plugins: [react(), pluginRewriteAll()],
+  test: { environment: 'happy-dom' }
 } as VitestConfigExport)

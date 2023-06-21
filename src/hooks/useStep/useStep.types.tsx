@@ -1,13 +1,17 @@
-import { ReactElement } from 'react'
+import { type ReactElement } from 'react'
 
-export type StepType = { component: ReactElement; key: number; title: string }
+export interface StepType {
+  component: ReactElement
+  key: number
+  title: string
+}
 
-export type StepReturnType = {
-    next: Function
-    previous: Function
-    resetSteps: Function
-    isFirstStep: boolean
-    isLastStep: boolean
-    currentStep: number
-    content: ReactElement
+export interface StepReturnType {
+  next: Function
+  previous: Function
+  resetSteps: Function
+  isFirstStep: boolean
+  isLastStep: boolean
+  currentStep: number
+  content: ReactElement
 }

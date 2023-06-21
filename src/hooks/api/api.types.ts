@@ -1,24 +1,26 @@
-export type state = {
-    loading: boolean
-    error?: boolean
-    data?: []
+export interface state {
+  loading: boolean
+  error?: boolean
+  data?: []
 }
 
-export type mutationType = {
-    cancelError?: boolean
-    onCompleted: Function
-    onError?: Function
+export interface mutationType {
+  cancelError?: boolean
+  onCompleted: () => void
+  onError?: () => void
 }
 
 export type queryType<T> = Omit<mutationType, 'onCompleted'> & {
-    variables?: T
-    cancelFirstEffect: Function
+  variables?: T
+  cancelFirstEffect: boolean
 }
 
-export type func = { functionFetch: Function }
+export interface func {
+  functionFetch: Function
+}
 
 export enum FetchCase {
-    loading = 'loading',
-    fetched = 'fetched',
-    error = 'error',
+  loading = 'loading',
+  fetched = 'fetched',
+  error = 'error'
 }

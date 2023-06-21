@@ -1,1 +1,1 @@
-export { ErrorToken } from "./ErrorToken";
+export { ErrorToken } from './ErrorToken'

@@ -7,9 +7,9 @@ const successMessage = (description: string) => message.success(description)
 const warningMessage = (description: string) => message.warning(description)
 
 const errorMessage = (error: any) =>
-    message.error(
-        error?.response ? error.response.data.message : error?.message || error,
-        5
-    )
+  message.error(
+    error?.response ? error.response.data.message : error?.message || error,
+    5
+  )
 
 export { infoMessage, successMessage, warningMessage, errorMessage }

@@ -1,11 +1,11 @@
-import propTypes, { InferProps } from 'prop-types'
+import propTypes, { type InferProps } from 'prop-types'
 
 export const StatusTagPropTypes = {
-    status: propTypes.oneOf(['active', 'inactive', 'pending']).isRequired,
+  status: propTypes.oneOf(['active', 'inactive', 'pending']).isRequired
 }
 
 export const DefaultStatusTagPropTypes = {
-    status: 'Cargando',
+  status: 'Cargando'
 }
 
 export type StatusTagProps = InferProps<typeof StatusTagPropTypes>

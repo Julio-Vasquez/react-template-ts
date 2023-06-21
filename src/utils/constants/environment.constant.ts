@@ -7,9 +7,9 @@ export const URL_API: string = import.meta.env.VITE_BASE_URL
 export const APP_NAME: string = import.meta.env.VITE_APP_NAME
 
 export const MODES = {
-    dev: 'dev',
-    prod: 'production',
-    staging: 'staging',
+  dev: 'dev',
+  prod: 'production',
+  staging: 'staging'
 }
 
 export const IS_DEV: boolean = import.meta.env.VITE_MODE === MODES.dev
